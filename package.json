@@ -1,0 +1,23 @@
+{
+  "name": "employee-breakdown-generator",
+  "version": "1.0.0",
+  "description": "User can enter information about their software team and a formatted HTML file will be created",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abarragan89/employee-breakdown-generator.git"
+  },
+  "author": "Anthony Barragan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abarragan89/employee-breakdown-generator/issues"
+  },
+  "homepage": "https://github.com/Abarragan89/employee-breakdown-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.5.1"
+  }
+}
