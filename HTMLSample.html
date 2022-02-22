@@ -1,15 +1,4 @@
-"use strict";
 
-const Engineer = require('../lib/Engineer');
-const Manager = require('../lib/Manager');
-const Intern = require('../lib/Intern');
-const fs = require('fs');
-
-const employeeCards = [];
-
-// card maker
-function generateHTML() {
-        return `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -28,20 +17,7 @@ function generateHTML() {
             </header>
             <main class="container">
                 <div class="columns">
-                ${employeeCards.join("\n")}
-                </div>
-            </div>
-                </div> <!-- end of column-->
-            </main>
-        </body>
-        </html>
-    `
-    }
-
-function makeCard(data) {
-    if (data.manager_office_number) {
-    const newMan = new Manager(data.manager_name, data.manager_id, data.manager_email, data.manager_office_number)
-    const card = `
+                
     <div class="card column m-5 has-background-light">
     <header class="card-header has-background-link">
         <h2 class="card-header-title has-text-white is-size-4">
@@ -51,28 +27,24 @@ function makeCard(data) {
     <div class="card-content">
         <div class="content mb-1">
             <div class="box">
-                ${newMan.getId()}
+                821
             </div>
         </div>
         <div class="content mb-1">
             <div class="box">
-                <p>Email: <a href="">${newMan.getEmail()}</a></p>
+                <p>Email: <a href="">mike@gmail.com</a></p>
             </div>
         </div>
         <div class="content">
             <div class="box">
-                <p>Office Number: ${data.manager_office_number}</p>
+                <p>Office Number: 812</p>
             </div>
         </div>
     </div>
     </div>
 
-    `
-    employeeCards.push(card)
+    
 
-    } else if (data.engineer_github) {
-        const newEmp = new Engineer(data.engineer_name, data.engineer_id, data.engineer_email, data.engineer_github)
-        const card = `
         <div class="card column m-5 has-background-light">
         <header class="card-header has-background-link">
             <h2 class="card-header-title has-text-white is-size-4">
@@ -82,27 +54,24 @@ function makeCard(data) {
         <div class="card-content">
             <div class="content mb-1">
                 <div class="box">
-                    ${newEmp.getId()}
+                    812
                 </div>
             </div>
             <div class="content mb-1">
                 <div class="box">
-                    <p>Email: <a href="">${newEmp.getEmail()}</a></p>
+                    <p>Email: <a href="">email</a></p>
                 </div>
             </div>
             <div class="content">
                 <div class="box">
-                <p>GitHub:<a href="https://www.github.com/${newEmp.getGithub()} target="_blank">${newEmp.getGithub()}</a></p>
+                <p>GitHub:<a href="https://www.github.com/abarragan89 target="_blank">abarragan89</a></p>
                 </div>
             </div>
         </div>
         </div>
 
-        `
-        employeeCards.push(card)        
-    } else if (data.intern_school) {
-        const newEmp = new Intern(data.intern_name, data.intern_id, data.intern_email, data.intern_school);
-        const card = `
+        
+
         <div class="card column m-5 has-background-light">
         <header class="card-header has-background-link">
             <h2 class="card-header-title has-text-white is-size-4">
@@ -112,39 +81,53 @@ function makeCard(data) {
         <div class="card-content">
             <div class="content mb-1">
                 <div class="box">
-                    ${newEmp.getId()}
+                    sdfasdfasdf
                 </div>
             </div>
             <div class="content mb-1">
                 <div class="box">
-                    <p>Email: <a href="">${newEmp.getEmail()}</a></p>
+                    <p>Email: <a href="">asdfasdf</a></p>
                 </div>
             </div>
             <div class="content">
                 <div class="box">
-                <p>School: ${newEmp.getSchool()}</p>
+                <p>School: asdfasdfasdfasdf</p>
                 </div>
             </div>
         </div>
         </div>
-        `
-        employeeCards.push(card)
-    }
-}
-
-// Function to write README file
-function writeToFile(data) {
-    return new Promise ((resolve, reject) => {
-        fs.writeFile('./HTMLSample.html', (generateHTML(data)), err => {
-            if (err) {
-                reject(err);
-                return;
-            }
-            resolve(console.log("File was created"))
-        })
         
-    });
-};
 
+        <div class="card column m-5 has-background-light">
+        <header class="card-header has-background-link">
+            <h2 class="card-header-title has-text-white is-size-4">
+                Engineer
+            </h2>
+        </header>
+        <div class="card-content">
+            <div class="content mb-1">
+                <div class="box">
+                    asdfasdf
+                </div>
+            </div>
+            <div class="content mb-1">
+                <div class="box">
+                    <p>Email: <a href="">asdfas</a></p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="box">
+                <p>GitHub:<a href="https://www.github.com/dfsadf target="_blank">dfsadf</a></p>
+                </div>
+            </div>
+        </div>
+        </div>
 
-module.exports = { generateHTML, makeCard, writeToFile };
+        
+                </div>
+            </div>
+                </div> <!-- end of column-->
+            </main>
+        </body>
+        </html>
+    

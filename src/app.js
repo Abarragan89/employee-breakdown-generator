@@ -1,10 +1,11 @@
 "use strict";
 
 const inquirer = require('inquirer');
+const {generateHTML, makeCard, writeToFile } = require('./generateHTML')
 
 
 function managerQuestions (){
-    inquirer
+    return inquirer
     .prompt([
         {
             type: "input",
@@ -33,11 +34,12 @@ function managerQuestions (){
         }
     ])
     .then(answers => {
+        // Make card with data and add it to the array
+        makeCard(answers);
         if (answers.choose_employee == "Engineer") {
             console.log(answers)
             engineerQuestions();
         } else {
-            console.log(answers);
             internQuestions();
         }
     })
@@ -74,6 +76,7 @@ function engineerQuestions () {
         }
     ])
     .then(answers => {
+        makeCard(answers);
         if (answers.choose_employee === "Engineer") {
             console.log(answers);
             engineerQuestions();
@@ -82,11 +85,10 @@ function engineerQuestions () {
             internQuestions();
         } 
         else {
-            console.log(answers)
+            writeToFile();
         }
     })
 }
-
 
 function internQuestions () {
     inquirer
@@ -118,6 +120,7 @@ function internQuestions () {
         }
     ])
     .then(answers => {
+        makeCard(answers)
         if (answers.choose_employee === "Engineer") {
             console.log(answers);
             engineerQuestions();
@@ -126,7 +129,7 @@ function internQuestions () {
             internQuestions();
         } 
         else {
-            console.log(answers)
+            writeToFile();
         }
     })
 }
