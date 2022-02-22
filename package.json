@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Abarragan89/employee-breakdown-generator#readme",
   "dependencies": {
+    "bulma": "^0.9.3",
     "inquirer": "^8.2.0",
     "jest": "^27.5.1"
   }
