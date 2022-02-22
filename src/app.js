@@ -1,8 +1,7 @@
 "use strict";
 
 const inquirer = require('inquirer');
-const {generateHTML, makeCard, writeToFile } = require('./generateHTML')
-
+const { makeCard, writeToFile } = require('./generateHTML')
 
 function managerQuestions (){
     return inquirer
@@ -37,7 +36,6 @@ function managerQuestions (){
         // Make card with data and add it to the array
         makeCard(answers);
         if (answers.choose_employee == "Engineer") {
-            console.log(answers)
             engineerQuestions();
         } else {
             internQuestions();
@@ -78,10 +76,8 @@ function engineerQuestions () {
     .then(answers => {
         makeCard(answers);
         if (answers.choose_employee === "Engineer") {
-            console.log(answers);
             engineerQuestions();
         } else if (answers.choose_employee === "Intern") {
-            console.log(answers)
             internQuestions();
         } 
         else {
@@ -122,10 +118,8 @@ function internQuestions () {
     .then(answers => {
         makeCard(answers)
         if (answers.choose_employee === "Engineer") {
-            console.log(answers);
             engineerQuestions();
         } else if (answers.choose_employee === "Intern") {
-            console.log(answers);
             internQuestions();
         } 
         else {
