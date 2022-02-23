@@ -18,7 +18,7 @@ describe("Engineer's Methods", () => {
     })
     test("get Github from Engineer", () => {
         const newEng = new Engineer('dan', 90, 'dandaman@gmail.com', 'abarragan89');
-        expect(newEng.getGithub()).toBe("https://github.com/abarragan89")
+        expect(newEng.getGithub()).toBe("abarragan89")
     });
 })
 

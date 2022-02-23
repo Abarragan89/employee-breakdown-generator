@@ -146,12 +146,12 @@ function makeCard(data) {
 // Function to write README file
 function writeToFile(data) {
     return new Promise ((resolve, reject) => {
-        fs.writeFile('./employees.html', (generateHTML()), err => {
+        fs.writeFile('./dist/employees.html', (generateHTML()), err => {
             if (err) {
                 reject(err);
                 return;
             }
-            resolve(console.log("A file was created title 'employees.html'"))
+            resolve(console.log("A file was created title 'employees.html' in the dist directory."))
         })
     });
 };
