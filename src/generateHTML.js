@@ -69,7 +69,6 @@ function makeCard(data) {
         </div>
     </div>
     </div>
-
     `
     employeeCards.push(card)
 
@@ -105,7 +104,6 @@ function makeCard(data) {
             </div>
         </div>
         </div>
-
         `
         employeeCards.push(card)        
     } else if (data.intern_school) {
@@ -121,7 +119,7 @@ function makeCard(data) {
                 </span>Intern
             </p>
         </h2>
-    </header>
+        </header>
         <div class="card-content">
             <div class="content mb-1">
                 <div class="box">
@@ -148,14 +146,13 @@ function makeCard(data) {
 // Function to write README file
 function writeToFile(data) {
     return new Promise ((resolve, reject) => {
-        fs.writeFile('./employees.html', (generateHTML(data)), err => {
+        fs.writeFile('./employees.html', (generateHTML()), err => {
             if (err) {
                 reject(err);
                 return;
             }
             resolve(console.log("A file was created title 'employees.html'"))
         })
-        
     });
 };
 
