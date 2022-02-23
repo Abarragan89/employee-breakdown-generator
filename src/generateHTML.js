@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const employeeCards = [];
 
-// card maker
+// Generate HTML
 function generateHTML() {
         return `
         <!DOCTYPE html>
@@ -37,6 +37,7 @@ function generateHTML() {
     `
     }
 
+// Make cards for employees
 function makeCard(data) {
     if (data.manager_office_number) {
     const newMan = new Manager(data.manager_name, data.manager_id, data.manager_email, data.manager_office_number)

@@ -3,6 +3,7 @@
 const inquirer = require('inquirer');
 const { makeCard, writeToFile } = require('./generateHTML')
 
+// opening manager questions
 function managerQuestions (){
     return inquirer
     .prompt([
@@ -63,6 +64,7 @@ function managerQuestions (){
     .then(answers => {
         // Make card with data and add it to the array
         makeCard(answers);
+        // Decide which employee to make next
         if (answers.choose_employee == "Engineer") {
             engineerQuestions();
         } else {
@@ -70,8 +72,8 @@ function managerQuestions (){
         }
     })
 }
-    
 
+// Engineer questions
 function engineerQuestions () {
     inquirer
     .prompt([
@@ -130,6 +132,7 @@ function engineerQuestions () {
         }
     ])
     .then(answers => {
+        // make card and add to array
         makeCard(answers);
         if (answers.choose_employee === "Engineer") {
             engineerQuestions();
@@ -137,11 +140,13 @@ function engineerQuestions () {
             internQuestions();
         } 
         else {
+            // Build HTML
             writeToFile();
         }
     })
 }
 
+// Intern questions
 function internQuestions () {
     inquirer
     .prompt([
@@ -200,6 +205,7 @@ function internQuestions () {
         }
     ])
     .then(answers => {
+        // make card and add to array
         makeCard(answers)
         if (answers.choose_employee === "Engineer") {
             engineerQuestions();
@@ -207,6 +213,7 @@ function internQuestions () {
             internQuestions();
         } 
         else {
+            // Buld HTML
             writeToFile();
         }
     })
